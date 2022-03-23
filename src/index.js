@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MarketApp } from './components/MarketApp';
+import { TaskApp } from './components/TaskApp';
 
 import './style/styles.scss';
 
 ReactDOM.render(
-    <MarketApp />,
+    <TaskApp />,
   document.getElementById('root')
 );
 

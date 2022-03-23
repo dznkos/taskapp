@@ -1,16 +1,14 @@
-import { Modal } from '@mui/material';
-import { Box } from '@mui/system';
+
 import React,{ useState, useEffect} from 'react'
-import { useForm } from '../../hooks/useForm';
- 
+import { useForm } from '../../hooks/useForm'; 
 
 import api from '../api/api';
 
-import Form  from '../screens/FormDialog';
+import { Modal } from '@mui/material';
+import { Box } from '@mui/system';
 
 
 export const HomeScreen = () => {
-
 
   const itask = {
     id: "", 
@@ -18,11 +16,10 @@ export const HomeScreen = () => {
     completed: false 
   }
  
-  const [status, setStatus] = useState('boot');
+  // const [status, setStatus] = useState('boot');
   const [items, setItems] = useState(itask);
-  const [item, setItem] = useState( null );
 
-  const [isLoading, toggleLoading] = useState(true);
+  // const [isLoading, toggleLoading] = useState(true);
 
   const [ formValues, handleInputChange, reset ] = useForm({
     taskName: ''
@@ -33,7 +30,6 @@ export const HomeScreen = () => {
   });
 
   const { taskName } = formValues;
-
   const { taskEdit } = editFormValues;
 
 
@@ -87,17 +83,18 @@ export const HomeScreen = () => {
   // ejecuta el boton E
   const handleEdit = ( idProd ) => {
     
-    const objEditTask = items.filter( prod => prod.id === idProd )
     // vacia el formEdit
     rst()
-
+    // busca task 
+    const objEditTask = items.filter( prod => prod.id === idProd )
     const [ objEdit ] = objEditTask
+
+    // set form con task
     setEditValue(objEdit);
 
-    handleOpen();
-
-    
+    handleOpen();    
   } 
+
   // ejecuta button SAVE
   const handleEditSave = (e) => {
     e.preventDefault();

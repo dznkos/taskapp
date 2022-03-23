@@ -6,7 +6,7 @@ export const NavBar = () => {
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <Link class="navbar-brand" to="/">
-            Market App
+            Task App
           </Link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -16,9 +16,9 @@ export const NavBar = () => {
               <NavLink 
                 class={ ( isActive ) => "nav-item nav-link" + ( isActive && 'active')}
                 exact="true"
-                to="/market"
+                to="/tasklist"
               >
-                Home
+                TaskList
               </NavLink>              
             
               <NavLink activeclassname="selected"
@@ -31,9 +31,9 @@ export const NavBar = () => {
               <NavLink 
                 class={ ( isActive ) => "nav-item nav-link" + ( isActive && 'active')} 
                 exact="true"
-                to="/market"
+                to="/"
               >
-              Markt
+              Blog
               </NavLink>
               
             </ul>
